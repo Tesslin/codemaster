@@ -1,0 +1,28 @@
+public static String timeConversion(String s) {
+    // Write your code here
+    int len=s.length();
+    StringBuilder milit=new StringBuilder(s);
+    for(int i=0;i<len-1;i++){
+        if(s.charAt(len-2)=='A'){
+            if(s.charAt(0)=='1'&&s.charAt(1)=='2'){
+                milit.setCharAt(0,'0');
+                milit.setCharAt(1,'0');
+                return milit.substring(0,len-2);
+            }
+        }
+        if(s.charAt(len-2)=='P'){
+            if(s.charAt(0)=='1'&&s.charAt(1)=='2'){
+                return milit.substring(0,len-2);
+            }
+            else{
+                int sum=((int)s.charAt(0)-48)*10+(int)s.charAt(1)-48;
+                sum+=12;
+                String val=String.valueOf(sum);
+                milit.setCharAt(0,val.charAt(0));
+                milit.setCharAt(1, val.charAt(1));
+                return milit.substring(0,len-2);
+            }
+        }
+    }
+    return milit.substring(0,len-2);
+    }
