@@ -1,0 +1,24 @@
+import java.util.*;
+import java.util.Scanner;
+public class Solution{
+  public static String checkLucky(String s){
+    int a=Integer.parseInt(String.valueOf(s.charAt(0)));
+    int b=Integer.parseInt(String.valueOf(s.charAt(1)));
+    int c=Integer.parseInt(String.valueOf(s.charAt(2)));
+    int m=Integer.parseInt(String.valueOf(s.charAt(3)));
+    int n=Integer.parseInt(String.valueOf(s.charAt(4)));
+    int o=Integer.parseInt(String.valueOf(s.charAt(5)));
+    return ((a+b+c)==(m+n+o))?"YES":"NO";
+  }
+    public static void main (String args[]){
+        Scanner ip=new Scanner(System.in);
+        int n=ip.nextInt();
+        ip.nextLine();
+        while(n>0){
+          String s=ip.nextLine();
+          String lucky=checkLucky(s);
+          System.out.println(lucky);
+        	n--;
+        }
+    }
+}
